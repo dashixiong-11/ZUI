@@ -1,8 +1,21 @@
 import * as React from 'react';
+import './importAllIcon'
 
-const icon = ()=>{
-    return <div> icon </div>
+
+
+interface IconProps {
+    name:string
 }
+const icon:React.FunctionComponent<IconProps>  = (props) => {
+    
+    return <>
+        <span>
+            <svg>
+                <use xlinkHref={ `#${props.name}`}/>
+            </svg>
+        </span>
+    </>;
+};
 
 
-export default  icon
+export default icon;
