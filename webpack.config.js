@@ -1,12 +1,12 @@
 const path = require('path')
 //const HtmlwebpackPlugin = require('html-webpack-plugin')
 module.exports = {
-  // mode: "production",
+   // mode: "production",
    entry: {
       index: './lib/index.tsx'
    },
    resolve: {
-      extensions: ['.ts','.tsx','.js','.jsx']
+      extensions: ['.ts', '.tsx', '.js', '.jsx']
    },
    output: {
       path: path.resolve(__dirname, 'dist/lib'),
@@ -22,6 +22,10 @@ module.exports = {
          {
             test: /\.svg$/,
             loader: 'svg-sprite-loader'
+         },
+         {
+            test: /\.scss$/,
+            use: ['style-loader', 'css-loader', 'sass-loader']
          }
       ]
 

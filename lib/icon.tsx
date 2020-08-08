@@ -1,20 +1,19 @@
 import * as React from 'react';
-import './importAllIcon'
+import './icon.scss';
+import './importAllIcon';
+import classes from './helpers/classes';
 
 
-
-interface IconProps {
-    name:string
+interface IconProps extends React.SVGAttributes<SVGElement> {
+    name: string
 }
-const icon:React.FunctionComponent<IconProps>  = (props) => {
-    
-    return <>
-        <span>
-            <svg>
-                <use xlinkHref={ `#${props.name}`}/>
-            </svg>
-        </span>
-    </>;
+
+const icon: React.FunctionComponent<IconProps> = (props) => {
+    const {className, ...restProps} = props;
+
+    return <svg className={classes('zui-icon',className)} {...restProps} >
+        <use xlinkHref={`#${props.name}`}/>
+    </svg>;
 };
 
 
