@@ -1,17 +1,17 @@
 import ReactDOM from 'react-dom';
-import React from 'react'
-import Icon from './icon';
+import React from 'react';
+import Icon from './icon/icon';
 
-const fn:React.MouseEventHandler = (e)=>{
+const fn: React.MouseEventHandler = (e) => {
     console.log(e);
-}
+};
 
-const app = () =>{
+const app = () => {
     return <div>
-        <Icon name='wechat' className='xxx' onClick={ fn }></Icon>
-    </div>
-}
+        <Icon  name='wechat'  color='red' onClick={fn}></Icon>
+    </div>;
+};
 
 
-ReactDOM.render(app(),document.getElementById("root"))
+ReactDOM.render(app(), document.getElementById('root'));
 

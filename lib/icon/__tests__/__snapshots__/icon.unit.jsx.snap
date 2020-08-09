@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`icon render 1`] = `
+<svg
+  className="zui-icon"
+  style={
+    Object {
+      "fill": "undefined",
+      "fontSize": "undefinedpx",
+    }
+  }
+>
+  <use
+    xlinkHref="#undefined"
+  />
+</svg>
+`;
