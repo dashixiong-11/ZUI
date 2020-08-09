@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="jest tests" tests="6" failures="0" time="6.305">
+  <testsuite name="第一个测试用例" errors="0" failures="0" skipped="0" timestamp="2020-08-09T14:27:24" time="2.085" tests="1">
+    <testcase classname="第一个测试用例 111" name="第一个测试用例 111" time="0.002">
+    </testcase>
+  </testsuite>
+  <testsuite name="classes" errors="0" failures="0" skipped="0" timestamp="2020-08-09T14:27:24" time="2.38" tests="3">
+    <testcase classname="classes 接受 1个 参数" name="classes 接受 1个 参数" time="0.006">
+    </testcase>
+    <testcase classname="classes 接受 2个 参数" name="classes 接受 2个 参数" time="0">
+    </testcase>
+    <testcase classname="classes 接受 奇奇怪怪的 参数" name="classes 接受 奇奇怪怪的 参数" time="0">
+    </testcase>
+  </testsuite>
+  <testsuite name="icon" errors="0" failures="0" skipped="0" timestamp="2020-08-09T14:27:24" time="3.109" tests="2">
+    <testcase classname="icon render" name="icon render" time="0.019">
+    </testcase>
+    <testcase classname="icon onClick" name="icon onClick" time="0.056">
+    </testcase>
+  </testsuite>
+</testsuites>
