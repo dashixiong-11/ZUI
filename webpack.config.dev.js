@@ -4,7 +4,7 @@ module.exports = Object.assign({},base,{
     mode: "development",
    plugins: [
       new HtmlwebpackPlugin({
-         title: 'ZUI - react',
+         title: 'ORZUI - react',
          template: 'index.html'
       })
    ],

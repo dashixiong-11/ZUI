@@ -1,8 +1,8 @@
 {
   "name": "orzui",
-  "version": "0.0.2",
+  "version": "0.0.4",
   "files": [
-    "/dist"
+    "/dist/**/*"
   ],
   "description": "",
   "main": "dist/lib/index.js",
