@@ -1,3 +1,3 @@
-#!/bin/env bash
-npm version path
+#!/bin/zsh
+npm version patch
 git push
