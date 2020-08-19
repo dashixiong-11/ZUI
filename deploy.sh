@@ -1,3 +1,3 @@
 #!/bin/zsh
 npm version $1 && \
-git push --follow-tagsh
+git push origin master:deploy --follow-tagsh

@@ -1,0 +1,7 @@
+[class^=orz-] {
+  box-sizing: border-box;
+  &::after,
+  &::before {
+    box-sizing: border-box;
+  }
+}

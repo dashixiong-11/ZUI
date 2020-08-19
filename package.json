@@ -25,8 +25,11 @@
   },
   "homepage": "https://github.com/dashixiong-11/ZUI#readme",
   "dependencies": {
+    "@types/react-router-dom": "^5.1.5",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
+    "react-router": "^5.2.0",
+    "react-router-dom": "^5.2.0",
     "webpack": "^4.44.1",
     "webpack-cli": "^3.3.12"
   },
