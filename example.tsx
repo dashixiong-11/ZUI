@@ -11,7 +11,9 @@ ReactDOM.render((<div>
         <ul>
             <li>
                 <NavLink to='/icon'>icon</NavLink>
-                <NavLink to='/dialog'>icon</NavLink>
+            </li>
+            <li>
+                <NavLink to='/dialog'>dialog</NavLink>
             </li>
         </ul>
         <Route path='/icon' component={IconDemo}></Route>
