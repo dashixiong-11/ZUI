@@ -1,19 +1,48 @@
 .orz-dialog {
   position: fixed;
-  width: 10em;
-  height: 10em;
-  border-radius: 6px;
+  width: 18em;
+  border-radius: 3px;
   background: white;
   top: 50%;left: 50%;
   transform: translate(-50%, -50%);
   z-index: 1;
+  ont-family: Roboto, Noto, sans-serif;
   &-icon {
+    text-align: end;
   }
   &-header {
+    padding: 10px 15px 0;
+    font-size: 20px;
+    font-weight: 500;
+    color: #000;
   }
   &-main {
+    padding:  20px;
+    color: rgba(0, 0, 0, .8);
+    font-size: 14px;
   }
   &-footer {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    &-confirm {
+      display: flex;
+      align-items: center;
+      flex-direction: row-reverse;
+      > button {
+        border: none;
+        background: none;
+        outline: none;
+        padding: 0 12px;
+        min-width: 70px;
+        font-size: 14px;
+        font-weight: 600;
+        color: #009688;
+        margin-right: 5px;
+        text-transform: uppercase;
+        min-height: 42px;
+      }
+    }
   }
 }
 .orz-dialog-mask {position: fixed;top: 0;left: 0;width: 100%;height: 100%;z-index: 1;background: fade-out(black, .5)}
