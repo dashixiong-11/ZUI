@@ -4,31 +4,38 @@ import React from 'react';
 import Footer from "./footer";
 import Content from "./content";
 import Aside from "./aside";
+import './layout.example.scss'
 
 
 export default function () {
     return <div style={{height: '100vh'}}>
-        <Layout>
-            <Header></Header>
-            <Content></Content>
-            <Footer></Footer>
+        <Layout >
+            <Header className='h'>
+                header
+            </Header>
+            <Content className='c'>
+                content
+            </Content>
+            <Footer className='f'>
+                footer
+            </Footer>
         </Layout>
 
-        <Layout>
-            <Header></Header>
+        <Layout style={{margin:'50px 0'}}>
+            <Header className='h'>header</Header>
             <Layout>
-                <Aside></Aside>
-                <Content></Content>
+                <Aside className='a'>aside</Aside>
+                <Content className='c'>content</Content>
             </Layout>
-            <Footer></Footer>
+            <Footer className='f'>footer</Footer>
         </Layout>
 
         <Layout>
-            <Aside></Aside>
+            <Aside className='a'>Aside</Aside>
             <Layout>
-                <Header></Header>
-                <Content></Content>
-                <Footer></Footer>
+                <Header className='h'>Header</Header>
+                <Content className='c'>content</Content>
+                <Footer className='f'>footer</Footer>
             </Layout>
         </Layout>
 

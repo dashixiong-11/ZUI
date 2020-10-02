@@ -7,7 +7,7 @@ const Aside: React.FunctionComponent<Props> = (props) => {
 
     const {className,...rest} = props
     return (
-        <div className={sc('',{extra:className})} {...rest}>aside</div>
+        <div className={sc('',{extra:className})} {...rest}>{props.children}</div>
     )
 }
 
