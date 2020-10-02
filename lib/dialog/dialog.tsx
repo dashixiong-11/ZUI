@@ -33,7 +33,7 @@ const Dialog: React.FunctionComponent<Props> = (props) => {
     const x = props.visible ?
         <Fragment>
             <div className={sc('mask')} onClick={onClickMask}></div>
-            <div className={sc()}>
+            <div className={sc('')}>
                 <header className={sc('header')}>
                     {
                         props.closeButton && <div className={sc('icon')} onClick={onClickClose}>
