@@ -2,7 +2,7 @@ import React, {Fragment, ReactElement, ReactNode} from 'react'
 import ReactDOM from 'react-dom'
 import './dialog.scss'
 import {Icon} from "../index";
-import {scopedClassNameMaker} from "../classes";
+import {scopedClassNameMaker} from "../helpers/classes";
 
 
 interface Props {
@@ -19,7 +19,7 @@ interface IButton {
     callBack: () => void
 }
 
-const sc = scopedClassNameMaker('orz-dialog')
+const sc = scopedClassNameMaker('dialog')
 
 const Dialog: React.FunctionComponent<Props> = (props) => {
     const onClickClose: React.MouseEventHandler = e => {
