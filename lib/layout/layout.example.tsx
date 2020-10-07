@@ -1,9 +1,5 @@
-import Layout from "./layout";
-import Header from "./header";
 import React from 'react';
-import Footer from "./footer";
-import Content from "./content";
-import Aside from "./aside";
+import { Layout,Header,Footer,Content,Aside} from  './layout'
 import './layout.example.scss'
 
 
