@@ -13,6 +13,7 @@ interface Props {
     buttons: ReactFragment,
     onSubmit: React.FormEventHandler<HTMLFormElement>,
     onChange: (value: FormValue) => void
+    errors: { [K: string]: string[] }
 }
 
 const Form: React.FunctionComponent<Props> = (props) => {
@@ -29,10 +30,13 @@ const Form: React.FunctionComponent<Props> = (props) => {
     return (
         <form onSubmit={onSubmit} className={sc('')}>
             {
-                props.fields.map(f => <div>
-                    {f.label}
-                    <input type={f.input.type} onChange={onInputChange.bind(null, f.name)} value={props.value[f.name]}/>
-                </div>)
+                props.fields.map(f =>
+                    <div key={f.name}>
+                        {f.label}
+                        <input type={f.input.type} onChange={onInputChange.bind(null, f.name)}
+                               value={props.value[f.name]}/>
+                               <div>{props.errors[f.name] && props.errors[f.name]}</div>
+                    </div>)
             }
             <div> {props.buttons} </div>
         </form>
