@@ -10,7 +10,7 @@ interface IconProps extends React.SVGAttributes<SVGElement> {
     size?: number;
 }
 
-const icon: React.FunctionComponent<IconProps> = ({className, name, size, ...restProps}) => {
+const Icon: React.FunctionComponent<IconProps> = ({className, name, size, ...restProps}) => {
 
     return <svg style={{fontSize: `${size}px`}}
              className={classes('orz-icon', className)} {...restProps} >
@@ -19,4 +19,4 @@ const icon: React.FunctionComponent<IconProps> = ({className, name, size, ...res
 };
 
 
-export default icon;
+export default Icon;

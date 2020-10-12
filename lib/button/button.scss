@@ -1,0 +1,12 @@
+.orz-button{
+  color: #333;
+  border: 1px solid lighten(#333,50%);
+  background: none;
+  border-radius: 4px;
+  padding: 4px 16px;
+  line-height: 22px;
+  outline: none;
+  &:active{
+    background: #eeeeee;
+  }
+}
