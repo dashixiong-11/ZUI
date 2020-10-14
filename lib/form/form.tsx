@@ -31,7 +31,9 @@ const Form: React.FunctionComponent<Props> = (props) => {
 
     return (
         <form onSubmit={onSubmit} className={sc('')}>
-            <table style={{borderCollapse:'collapse'}}>
+            <table style={{borderCollapse: 'collapse'}}>
+                <tbody>
+
                 {
                     props.fields.map(f =>
                         <tr className={sc('row')} key={f.name}>
@@ -46,7 +48,7 @@ const Form: React.FunctionComponent<Props> = (props) => {
                                        onChange={onInputChange.bind(null, f.name)}
                                        value={props.value[f.name]}/>
                                 <div className={sc('row-td-error')}>{
-                                    props.errors[f.name] ? props.errors[f.name].join('，'):<span>&nbsp;</span>}</div>
+                                    props.errors[f.name] ? props.errors[f.name].join('，') : <span>&nbsp;</span>}</div>
                             </td>
                         </tr>)
                 }
@@ -56,6 +58,7 @@ const Form: React.FunctionComponent<Props> = (props) => {
                         <div> {props.buttons} </div>
                     </td>
                 </tr>
+                </tbody>
             </table>
         </form>
 

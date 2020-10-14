@@ -14,6 +14,16 @@ const FormDemo: React.FunctionComponent = () => {
         password: ''
     })
 
+    const names = ['frank', 'jack', 'alice', 'bob']
+    const checkUserName = (username: string, succeed: () => void, fail: () => void) => {
+        setTimeout(() => {
+            if (names.indexOf(username) >= 0) {
+                succeed()
+            } else {
+                fail()
+            }
+        }, 3000)
+    }
     const [fields] = useState([
         {name: 'username', label: '用户名', input: {type: 'text', placeholder: '请输入账号', icon: <Icon name='wechat'/>}},
         {name: 'password', label: '密码', input: {type: 'password'}}
@@ -25,12 +35,20 @@ const FormDemo: React.FunctionComponent = () => {
     const submit = (e: React.FormEvent<HTMLFormElement>) => {
         const rules = [
             {key: 'username', required: true},
-            {key: 'username', pattern: /^[A-Za-z0-9]+$/}
-        ]
-        const errors = Validator(formData, rules)
-        setErrors(errors)
-        console.log(errors);
+            {
+                key: 'username', validator: (username: string) => {
+                    return new Promise<string>((resolve, reject) => {
+                        checkUserName(username, resolve, reject)
+                    })
+                }
 
+            },
+            {key: 'username', pattern: /^[A-Za-z0-9]+$/},
+            {key: 'username', minLength: 6}
+        ]
+        Validator(formData, rules, (errors) => {
+            setErrors(errors)
+        })
     }
 
 
