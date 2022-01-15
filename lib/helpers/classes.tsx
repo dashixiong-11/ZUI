@@ -11,15 +11,14 @@ interface ClassToggles {
 }
 
 function scopedClassNameMaker(prefix: string) {
-
     return (name: string | ClassToggles, options?: x) =>
-        Object.entries(
-            name instanceof Object ? name : {[name]: name}
+        Object.entries(name instanceof Object  ? name : {[name]: name}
         ).filter(kv => kv[1] !== false).map(kv => kv[0]).map(n =>
             ['orz', prefix, n].filter(Boolean).join('-')
-        ).concat(options?.extra || []).join(' ')
+        ).concat(options && options.extra || []).join(' ')
 
 }
 
 export {scopedClassNameMaker}
 export default classes
+

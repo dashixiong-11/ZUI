@@ -1,14 +1,13 @@
-const HtmlwebpackPlugin = require('html-webpack-plugin')
 const base = require('./webpack.config')
-module.exports = Object.assign({},base,{
-    mode: "development",
-   entry: {
-       example:"./example.tsx"
-   },
-   plugins: [
-      new HtmlwebpackPlugin({
-         title: 'ORZUI - react',
-         template: 'example.html'
-      })
-   ],
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+module.exports = Object.assign({}, base, {
+    mode: 'development',
+    entry: {
+        example: './example.tsx',
+    },
+    plugins: [
+        new HtmlWebpackPlugin({
+            template: 'example.html'
+        })
+    ],
 })
