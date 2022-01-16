@@ -8,6 +8,11 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import {HashRouter as Router, NavLink, Route} from 'react-router-dom';
 import {Layout, Aside, Header, Content, Footer} from './lib/layout/layout';
+import ScrollExample from './lib/scroll/scroll.example';
+import CitySelectExample from './lib/citySelect/citySelect.example';
+import TreeExample from './lib/tree/tree.example';
+/*
+*/
 import './example.scss'
 import './lib/index'
 
@@ -29,10 +34,25 @@ ReactDOM.render((<div>
                         <li>
                             <NavLink to="/icon">Icon</NavLink>
                         </li>
+                        <li>
+                            <NavLink to="/scroll">滚动组件</NavLink>
+                        </li>
+                        <li>
+                            <NavLink to="/citySelect">城市选择</NavLink>
+                        </li>
+                        <li>
+                            <NavLink to="/tree">树组件</NavLink>
+                        </li>
                     </ul>
                 </Aside>
                 <Content className="site-main">
                     <Route path="/icon" component={IconDemo}/>
+                    <Route path="/scroll" component={ScrollExample}/>
+                    <Route path="/citySelect" component={CitySelectExample}/>
+                    <Route path="/tree" component={TreeExample}/>
+{/*
+                    <Route path="/tree" component={TreeExample}/>
+*/}
                 </Content>
             </Layout>
             <Footer className="site-footer">
