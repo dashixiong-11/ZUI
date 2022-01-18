@@ -1,19 +1,26 @@
+import React from 'react';
 import IconExample1 from './icon.example.1';
-import React, {Fragment} from 'react';
-import Demo from '../../demo';
+import ShowCode from "../../showCode/showCode";
 import IconExample2 from './icon.example.2';
 
 const IconDemo = () => {
-  return (
-    <Fragment>
+    return (
+        <div>
+            <ShowCode codeList={[
+                require('!!raw-loader!./icon.example.1.tsx').default,
+                require('!!raw-loader!./icon.example.2.tsx').default,
+            ]}>
+                <IconExample1/>
+                <IconExample2/>
+            </ShowCode>
+            {/*
       <Demo code={require('!!raw-loader!./icon.example.1.tsx').default}>
-        <IconExample1/>
       </Demo>
       <Demo code={require('!!raw-loader!./icon.example.2.tsx').default}>
-        <IconExample2/>
       </Demo>
-    </Fragment>
-  );
+*/}
+        </div>
+    );
 };
 
 export default IconDemo;
