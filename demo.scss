@@ -1,0 +1,19 @@
+.show-source-code {
+  padding: 20px;
+  background: #fff;
+  margin-bottom: 1em;
+  border-radius: 10px;
+  > .code-title-desc {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 0.5em;
+    > .code-title {
+      font-weight: bold;
+      font-size: 18px;
+    }
+    >.code-describe {
+      color: #333;
+      line-height: 1.8;
+    }
+  }
+}

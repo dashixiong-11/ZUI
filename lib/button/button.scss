@@ -1,12 +1,36 @@
-.orz-button{
-  color: #333;
-  border: 1px solid lighten(#333,50%);
+@import "../_help.scss";
+.orz-button {
+  color: $main-color;
+  border: 1px solid $main-color;
   background: none;
   border-radius: 4px;
   padding: 4px 16px;
   line-height: 22px;
   outline: none;
-  &:active{
+  &:active {
     background: #eeeeee;
+  }
+  &.primary {
+    border: none;
+    background: $main-color;
+    color: #fff;
+  }
+  &.large {
+    height: 50px;
+    &.border {
+      border-radius: 25px;
+    }
+  }
+  &.normal {
+    height: 44px;
+    &.border {
+      border-radius: 22px;
+    }
+  }
+  &.small {
+    height: 32px;
+    &.border {
+      border-radius: 16px;
+    }
   }
 }

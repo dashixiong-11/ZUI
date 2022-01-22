@@ -1,7 +1,24 @@
-.show-code {
-  min-height: 600px;
-  width: 375px;
-  overflow-y: scroll;
-  background: #fff;
-  border-radius: 20px;
+.show-code-wrapper {
+  display: flex;
+  justify-content: space-between;
+  > .show-code-list {
+    padding: 0 20px;
+    flex: 1;
+    overflow: auto;
+  }
+  > .show-code {
+    min-height: 600px;
+    padding: 15px;
+    width: 375px;
+    overflow: auto;
+    background: #fff;
+    border-radius: 20px;
+  }
+  .code-wrapper{
+    border-radius: 10px;
+  }
+  pre {
+    padding: 15px;
+    border-radius: 10px;
+  }
 }

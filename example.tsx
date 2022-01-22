@@ -5,6 +5,7 @@ import LayoutDemo from './lib/layout/layout.example'
 import FormDemo from './lib/form/form.example'
 import {HashRouter as Router, NavLink, Route} from 'react-router-dom';
 import IconDemo from './lib/icon/icon.demo'
+import ButtonDemo from './lib/button/button.demo'
 import ScrollExample from './lib/scroll/scroll.example';
 import CitySelectExample from './lib/citySelect/citySelect.example';
 import TreeExample from './lib/tree/tree.example';
@@ -22,11 +23,14 @@ ReactDOM.render((
                     <span> ZUI </span>
                 </div>
             </div>
-            <div style={{height:'80px'}}/>
+            <div style={{height: '80px'}}/>
             <main>
                 <aside className="site-aside">
                     <span>组件</span>
                     <ul>
+                        <li>
+                            <NavLink to="/button">Button</NavLink>
+                        </li>
                         <li>
                             <NavLink to="/icon">Icon</NavLink>
                         </li>
@@ -45,6 +49,7 @@ ReactDOM.render((
                     </ul>
                 </aside>
                 <div className="site-main">
+                    <Route path="/button" component={ButtonDemo}/>
                     <Route path="/icon" component={IconDemo}/>
                     <Route path="/scroll" component={ScrollExample}/>
                     <Route path="/dialog" component={DialogDemo}/>
