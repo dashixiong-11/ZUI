@@ -32,7 +32,7 @@ const Dialog: React.FunctionComponent<Props> = (props) => {
     }
     const x = props.visible ?
         <Fragment>
-            <div className={sc('mask')} onClick={onClickMask}></div>
+            <div className={sc('mask')} onClick={onClickMask}/>
             <div className={sc('')}>
                 <header className={sc('header')}>
                     {
@@ -63,7 +63,8 @@ const modal = (title: ReactNode, content: ReactNode, buttons?: ReactElement[]) =
         ReactDOM.unmountComponentAtNode(div)
         div.remove()
     }
-    const component = <Dialog visible={true} closeButton={true} title={title} buttons={buttons} onClose={onClose}> {content}</Dialog>
+    const component = <Dialog visible={true} closeButton={true} title={title} buttons={buttons}
+                              onClose={onClose}> {content}</Dialog>
     const div = document.createElement('div')
     document.body.append(div)
     ReactDOM.render(component, div)

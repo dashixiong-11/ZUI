@@ -9,6 +9,7 @@ import ButtonDemo from './lib/button/button.demo'
 import ScrollExample from './lib/scroll/scroll.example';
 import CitySelectExample from './lib/citySelect/citySelect.example';
 import TreeExample from './lib/tree/tree.example';
+import PopupDemo from './lib/popup/popup.demo';
 
 import './example.scss'
 import './lib/index'
@@ -46,6 +47,9 @@ ReactDOM.render((
                         <li>
                             <NavLink to="/form">form</NavLink>
                         </li>
+                        <li>
+                            <NavLink to="/popup">Popup</NavLink>
+                        </li>
                     </ul>
                 </aside>
                 <div className="site-main">
@@ -57,6 +61,7 @@ ReactDOM.render((
                     <Route path="/tree" component={TreeExample}/>
                     <Route path="/layout" component={LayoutDemo}/>
                     <Route path="/form" component={FormDemo}/>
+                    <Route path="/popup" component={PopupDemo}/>
                 </div>
             </main>
         </div>

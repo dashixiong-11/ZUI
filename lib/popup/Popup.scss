@@ -1,0 +1,10 @@
+.orz-popup {
+  position: absolute;
+  width: 100%;
+  z-index: 10;
+  &-content {
+    min-height: 300px;
+  }
+}
+.orz-popup-mask {position: fixed;
+  width: 100%;top: 0;left: 0;height: 100%;z-index: 9;background: fade-out(black, .5)}
