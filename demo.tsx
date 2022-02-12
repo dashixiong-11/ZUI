@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import Highlight, {defaultProps} from "prism-react-renderer";
 import theme from "prism-react-renderer/themes/duotoneLight";
 import './demo.scss'
@@ -8,10 +8,10 @@ interface Props {
     code: string;
     title: string;
     describe: string;
+    example: React.FunctionComponent
 }
 
 const Demo: React.FunctionComponent<Props> = (props) => {
-    console.log(theme);
     const code = (
         <Highlight {...defaultProps} theme={theme} code={props.code} language="jsx">
             {({className, style, tokens, getLineProps, getTokenProps}) => (
@@ -32,6 +32,9 @@ const Demo: React.FunctionComponent<Props> = (props) => {
             <div className='code-title-desc'>
                 <span className="code-title">{props.title}</span>
                 <span className="code-describe">{props.describe}</span>
+            </div>
+            <div className='code-example-wrapper'>
+                { props.example}
             </div>
             <div className='code-wrapper'>
                 {code}

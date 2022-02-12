@@ -6,17 +6,19 @@ const sc = scopedClassNameMaker('button')
 
 interface Props extends ButtonHTMLAttributes<HTMLButtonElement> {
     size?: 'normal' | 'large' | 'small',
-    border?: boolean,
-    theme?: 'default' | 'primary'
+    round?: boolean,
+    theme?: 'default' | 'primary' | 'text',
+    disabled?: boolean
 }
 
 
 const Button: React.FunctionComponent<Props> = (props) => {
-    const {className, ...rest} = props
-    const classes = [props.theme, props.size, props.border && 'border'].filter(Boolean).join(' ')
+    const {className, disabled, ...rest} = props
+    const classes = [props.theme, props.size, (props.round && 'border')].filter(Boolean).join(' ')
+    console.log(classes);
 
     return (
-        <button className={sc('', {extra: className + ` ${classes}`})} {...rest}>
+        <button disabled={disabled}  className={sc('', {extra: className + ` ${classes}`})} {...rest}>
             {props.children}
         </button>
     )
@@ -26,6 +28,7 @@ export default Button
 
 Button.defaultProps = {
     size: 'normal',
-    border: false,
-    theme: 'default'
+    round: false,
+    theme: 'default',
+    disabled: false
 }

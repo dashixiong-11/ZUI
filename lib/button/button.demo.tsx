@@ -1,8 +1,8 @@
 import React from 'react';
 import ButtonExample1 from './button.example.1';
-import ButtonExample2 from './button.example.2';
 import ButtonExample3 from './button.example.3';
 import ButtonExample4 from './button.example.4';
+import ButtonExample5 from './button.example.5';
 import ShowCode from "../../showCode/showCode";
 
 const ButtonDemo = () => {
@@ -10,30 +10,30 @@ const ButtonDemo = () => {
         {
             code:
             require('!!raw-loader!./button.example.1.tsx').default,
-            title: '普通按钮',
-            describe: '这是一段描述',
+            title: 'theme',
+            describe: '',
             example: <ButtonExample1/>
         },
         {
             code:
-            require('!!raw-loader!./button.example.2.tsx').default,
-            title: '主要按钮',
-            describe: '',
-            example: <ButtonExample2/>
-        },
-        {
-            code:
             require('!!raw-loader!./button.example.3.tsx').default,
-            title: '支持size',
+            title: 'size',
             describe: '',
             example: <ButtonExample3/>
         },
         {
             code:
             require('!!raw-loader!./button.example.4.tsx').default,
-            title: '支持border',
+            title: 'round',
             describe: '',
             example: <ButtonExample4/>
+        },
+        {
+            code:
+            require('!!raw-loader!./button.example.5.tsx').default,
+            title: 'disabled',
+            describe: '',
+            example: <ButtonExample5/>
         }
     ]
     return (
