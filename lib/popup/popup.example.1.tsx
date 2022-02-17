@@ -1,5 +1,5 @@
 import * as React from 'react';
-import Button from '../button/button';
+import Button from '../Button/Button';
 import {useState} from "react";
 import Popup from "./Popup";
 

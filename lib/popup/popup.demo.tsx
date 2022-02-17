@@ -1,6 +1,6 @@
 import React from 'react';
 import PopupExample1 from './popup.example.1';
-import ShowCode from "../../showCode/showCode";
+import ShowCode from "../../components/showCode/showCode";
 
 const PopupDemo = () => {
     const codeList: CodeList = [

@@ -1,6 +1,6 @@
 import React from 'react';
 import IconExample1 from './icon.example.1';
-import ShowCode from "../../showCode/showCode";
+import ShowCode from "../../components/showCode/showCode";
 import IconExample2 from './icon.example.2';
 
 const IconDemo = () => {

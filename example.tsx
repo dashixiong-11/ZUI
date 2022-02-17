@@ -3,14 +3,13 @@ import * as ReactDOM from 'react-dom'
 import DialogDemo from './lib/dialog/dialog.example'
 import LayoutDemo from './lib/layout/layout.example'
 import FormDemo from './lib/form/form.example'
-import {HashRouter as Router, NavLink, Route} from 'react-router-dom';
+import {HashRouter as Router, NavLink, Route } from 'react-router-dom';
 import IconDemo from './lib/icon/icon.demo'
-import ButtonDemo from './lib/button/button.demo'
+import ButtonDemo from './lib/Button/button.demo'
 import ScrollExample from './lib/scroll/scroll.example';
 import CitySelectExample from './lib/citySelect/citySelect.example';
 import TreeExample from './lib/tree/tree.example';
 import PopupDemo from './lib/popup/popup.demo';
-
 import './example.scss'
 import './lib/index'
 

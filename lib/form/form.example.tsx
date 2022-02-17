@@ -4,7 +4,7 @@ import Icon from '../icon/icon'
 
 import Form, {FormValue} from './form'
 import Validator from "./validator";
-import Button from "../button/button";
+import Button from "../Button/Button";
 
 const sc = scopedClassNameMaker('form-example')
 
