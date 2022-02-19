@@ -1,12 +1,12 @@
 import * as React from 'react'
 import * as ReactDOM from 'react-dom'
-import DialogDemo from './lib/dialog/dialog.example'
+import DialogDemo from './lib/dialog/dialog.demo'
 import LayoutDemo from './lib/layout/layout.example'
 import FormDemo from './lib/form/form.example'
-import {HashRouter as Router, NavLink, Route } from 'react-router-dom';
+import {HashRouter as Router, NavLink, Route} from 'react-router-dom';
 import IconDemo from './lib/icon/icon.demo'
 import ButtonDemo from './lib/Button/button.demo'
-import ScrollExample from './lib/scroll/scroll.example';
+import ScrollDemo from './lib/scroll/scroll.demo';
 import CitySelectExample from './lib/citySelect/citySelect.example';
 import TreeExample from './lib/tree/tree.example';
 import PopupDemo from './lib/popup/popup.demo';
@@ -54,7 +54,7 @@ ReactDOM.render((
                 <div className="site-main">
                     <Route path="/button" component={ButtonDemo}/>
                     <Route path="/icon" component={IconDemo}/>
-                    <Route path="/scroll" component={ScrollExample}/>
+                    <Route path="/scroll" component={ScrollDemo}/>
                     <Route path="/dialog" component={DialogDemo}/>
                     <Route path="/citySelect" component={CitySelectExample}/>
                     <Route path="/tree" component={TreeExample}/>

@@ -3,15 +3,18 @@ import ReactDOM from 'react-dom'
 import './dialog.scss'
 import {Icon} from "../index";
 import {scopedClassNameMaker} from "../helpers/classes";
+import ORZButton from "../Button/Button";
 
 
 interface Props {
     visible: boolean,
-    buttons?: ReactElement[],
+    buttons?: ReactElement[] | null | undefined,
     title?: ReactNode,
     onClose: React.MouseEventHandler,
     closeOnClickMask?: boolean,
-    closeButton?: boolean
+    closeButton?: boolean,
+    onOk?: () => void,
+    onCancel?: () => void
 }
 
 interface IButton {
@@ -30,6 +33,7 @@ const Dialog: React.FunctionComponent<Props> = (props) => {
             props.onClose(e)
         }
     }
+
     const x = props.visible ?
         <Fragment>
             <div className={sc('mask')} onClick={onClickMask}/>
@@ -43,11 +47,15 @@ const Dialog: React.FunctionComponent<Props> = (props) => {
                     <span> {props.title && props.title} </span>
                 </header>
                 <main className={sc('main')}>{props.children}</main>
-                {props.buttons && props.buttons.length > 0 && <footer className={sc('footer')}>
+                {props.buttons && props.buttons.length > 0 ? <footer className={sc('footer')}>
                     {props.buttons.map((button, index) => (
                         React.cloneElement(button, {key: index})
                     ))}
-                </footer>}
+                </footer> : (props.buttons === null ? null : <footer className={sc('footer')}>
+                    <ORZButton size='small' onClick={props.onCancel && props.onCancel}>cancel</ORZButton>
+                    <ORZButton size='small' theme='primary' onClick={props.onOk && props.onOk}>ok</ORZButton>
+                </footer>)
+                }
             </div>
         </Fragment>
         : null
@@ -57,7 +65,7 @@ const Dialog: React.FunctionComponent<Props> = (props) => {
 }
 Dialog.defaultProps = {closeOnClickMask: true, closeButton: false}
 
-const modal = (title: ReactNode, content: ReactNode, buttons?: ReactElement[]) => {
+const modal = (title: ReactNode, content: ReactNode, buttons?: ReactElement[] | null | undefined) => {
     const onClose = () => {
         ReactDOM.render(React.cloneElement(component, {visible: false}), div)
         ReactDOM.unmountComponentAtNode(div)
