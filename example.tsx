@@ -8,8 +8,8 @@ import IconDemo from './lib/icon/icon.demo'
 import ButtonDemo from './lib/Button/button.demo'
 import ScrollDemo from './lib/scroll/scroll.demo';
 import CitySelectExample from './lib/citySelect/citySelect.example';
-import TreeExample from './lib/tree/tree.example';
 import PopupDemo from './lib/popup/popup.demo';
+import TreeDemo from "./lib/tree/tree.demo";
 import './example.scss'
 import './lib/index'
 
@@ -41,9 +41,6 @@ ReactDOM.render((
                             <NavLink to="/tree">树组件</NavLink>
                         </li>
                         <li>
-                            <NavLink to="/dialog">dialog</NavLink>
-                        </li>
-                        <li>
                             <NavLink to="/form">form</NavLink>
                         </li>
                         <li>
@@ -57,7 +54,7 @@ ReactDOM.render((
                     <Route path="/scroll" component={ScrollDemo}/>
                     <Route path="/dialog" component={DialogDemo}/>
                     <Route path="/citySelect" component={CitySelectExample}/>
-                    <Route path="/tree" component={TreeExample}/>
+                    <Route path="/tree" component={TreeDemo}/>
                     <Route path="/layout" component={LayoutDemo}/>
                     <Route path="/form" component={FormDemo}/>
                     <Route path="/popup" component={PopupDemo}/>

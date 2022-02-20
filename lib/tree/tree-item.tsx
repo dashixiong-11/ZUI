@@ -2,6 +2,7 @@ import React, {ChangeEventHandler, useRef} from 'react';
 import {scopedClassNameMaker} from '../helpers/classes';
 import useUpdate from '../hooks/useUpdate';
 import useToggle from '../hooks/useToggle';
+import Icon from "../icon/icon";
 
 interface SourceDataItem {
     text: string;
@@ -20,6 +21,7 @@ type TreeProps = {
     selected: string,
     onChange: (values: string) => void
 })
+
 interface Props {
     item: SourceDataItem;
     level: number;
@@ -119,16 +121,15 @@ const TreeItem: React.FC<Props> = (props) => {
 
     return <div key={item.value} className={sc(classes)}>
         <div className={sc('text')}>
-            <input ref={inputRef} type="checkbox" onChange={onChange} checked={checked}/>
-            {item.text}
-            {item.children &&
-            <span onSelect={e => e.preventDefault()}>
-          {expanded ?
-              <span onClick={collapse}>-</span> :
-              <span onClick={expand}>+</span>
-          }
-        </span>
+            {item.children && <span onSelect={e => e.preventDefault()}>
+            {expanded ?
+                <Icon name='arrow' size={15} className='allow arrow-down' onClick={collapse}/> :
+                <Icon name='arrow' size={15} className='allow' onClick={expand}/>
             }
+            </span>}
+            <input ref={inputRef} name={item.value} id={item.value} type="checkbox" onChange={onChange}
+                   checked={checked}/>
+            <label htmlFor={item.value} className='checkbox-text'>{item.text}</label>
         </div>
         <div ref={divRef} className={sc({children: true, collapsed: !expanded})}>
             {item.children && item.children.map(sub =>

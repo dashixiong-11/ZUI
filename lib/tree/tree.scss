@@ -1,6 +1,6 @@
+@import "../help";
 .orz-tree {
   &-item {
-    border: 1px solid;
     line-height: 1.5;
   }
   &-level-1 {
@@ -30,8 +30,21 @@
   }
   &-text {
     display: block;
-    &:hover {
-      background: yellow;
+    user-select: none;
+    .arrow-down {
+      transform: rotate(180deg);
+    }
+    .arrow {
+      transition: all 300ms;
+    }
+    & > .checkbox-text {
+      margin-left: 4px;
+      padding: 0 2px;
+      border-radius: 4px;
+      &:hover {
+        cursor: default;
+        background: #eaeaea;
+      }
     }
   }
   &-children {
