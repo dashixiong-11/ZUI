@@ -17,12 +17,14 @@ import './lib/index'
 ReactDOM.render((
     <Router>
         <div className="site-page">
+{/*
             <div className="site-header">
                 <div className="logo">
                     <span>LOGO</span>
                     <span> ZUI </span>
                 </div>
             </div>
+*/}
             <div style={{height: '80px'}}/>
             <main>
                 <aside className="site-aside">

@@ -1,10 +1,91 @@
 .orz-popup {
+  box-sizing: border-box;
   position: absolute;
-  width: 100%;
+  top: 0;
   z-index: 10;
-  &-content {
-    min-height: 300px;
+  max-width: 10em;
+  padding: 10px;
+  background-color: #fff;
+  border-radius: 4px;
+  //box-shadow: -5px -4px 74px -32px rgba(0, 0, 0, 0.75);
+  filter: drop-shadow(0 1px 1px rgba(0, 0, 0, .5));
+  &::after {
+    z-index: 9;
+    position: absolute;
+    content: '';
+    filter: drop-shadow(0 1px 1px rgba(0, 0, 0, .5));
+    border: 10px solid transparent;
+  }
+  &::before {
+    z-index: 11;
+    position: absolute;
+    content: '';
+    border: 10px solid transparent;
   }
 }
-.orz-popup-mask {position: fixed;
-  width: 100%;top: 0;left: 0;height: 100%;z-index: 9;background: fade-out(black, .5)}
+.orz-popup-top::after {
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border-top-color: #fff;
+  border-bottom: none;
+}
+.orz-popup-top::before {
+  top: calc(100% - 2px);
+  left: 50%;
+  transform: translateX(-50%);
+  border-top-color: #fff;
+  border-bottom: none;
+}
+.orz-popup-bottom::after {
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -100%);
+  border-bottom-color: #fff;
+  border-top: none;
+}
+.orz-popup-bottom::before {
+  top: 2px;
+  left: 50%;
+  transform: translate(-50%, -100%);
+  border-bottom-color: #fff;
+  border-top: none;
+}
+.orz-popup-left::after {
+  top: 50%;
+  left: 100%;
+  transform: translate(0, -50%);
+  border-left-color: #fff;
+  border-right: none;
+}
+.orz-popup-left::before {
+  top: 50%;
+  left: calc(100% - 2px);
+  transform: translate(0, -50%);
+  border-left-color: #fff;
+  border-right: none;
+}
+.orz-popup-right::after {
+  top: 50%;
+  left: 0;
+  transform: translate(-100%, -50%);
+  border-right-color: #fff;
+  border-left: none;
+}
+.orz-popup-right::before {
+  top: 50%;
+  left: 2px;
+  transform: translate(-100%, -50%);
+  border-right-color: #fff;
+  border-left: none;
+}
+.orz-popup-wrapper {
+  display: inline-block;
+}
+.orz-popup-mask {
+  position: fixed;
+  top: 0;left: 0;
+  right: 0;
+  height: 100%;
+  z-index: 9;background: fade-out(black, .5)
+}

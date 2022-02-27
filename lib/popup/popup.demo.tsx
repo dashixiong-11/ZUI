@@ -20,7 +20,7 @@ const PopupDemo = () => {
     ]
 
     return (
-        <ShowCode codeList={codeList} apiDocList={apiDocList} title='Popup' desc=''/>
+        <ShowCode codeList={codeList} apiDocList={apiDocList} title='Popup' desc='一个普通popup组件'/>
     );
 };
 
