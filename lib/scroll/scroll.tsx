@@ -117,7 +117,6 @@ const Scroll: React.FunctionComponent<Props> = (props) => {
             return;
         }
         setTranslateY(translateY + deltaY);
-        console.log(translateY + deltaY);
         lastYRef.current = e.touches[0].clientY;
     };
     const onTouchEnd: TouchEventHandler = () => {

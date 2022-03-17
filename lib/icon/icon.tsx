@@ -14,10 +14,14 @@ interface IconProps extends React.SVGAttributes<SVGElement> {
 const Icon: React.FunctionComponent<IconProps> = ({className, name, size, ...restProps}) => {
 
     return <svg style={{fontSize: `${size}px`}}
-             className={classes('orz-icon', className)} {...restProps} >
-            <use xlinkHref={`#${name}`}/>
-        </svg>
+                className={classes('orz-icon', className)} {...restProps} >
+        <use xlinkHref={`#${name}`}/>
+    </svg>
 };
 
-
 export default Icon;
+
+Icon.defaultProps = {
+    size: 15,
+    color: '#009688'
+}

@@ -8,17 +8,16 @@ const ScrollDemo = () => {
             code:
             require('!!raw-loader!./scroll.example.1.tsx').default,
             title: '',
-            describe: '',
+            describe: 'onPull 方法仅在移动端有效',
             example: <ScrollExample1/>
         }
     ]
     const apiDocList: apiDoc[] = [
-        {name: 'theme', explain: '按钮类型', type: 'default | primary | text', default: 'default'},
-        {name: 'size', explain: '按钮尺寸', type: 'normal | large | small', default: 'normal'},
-        {name: 'disabled', explain: '是否禁用', type: 'Boolean', default: 'false'},
+        {name: 'height', explain: '滚动视图的高度', type: 'String', default: '-'},
+        {name: 'onPull', explain: '触发下拉事件方法', type: 'Function', default: '-'},
     ]
     return (
-        <ShowCode codeList={codeList} apiDocList={apiDocList} title='Button 按钮' desc='一个普普通通的按钮'/>
+        <ShowCode codeList={codeList} apiDocList={apiDocList} title='Scroll 滚动' desc='一个普普通通的滚动组件'/>
     );
 };
 

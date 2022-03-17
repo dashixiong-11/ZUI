@@ -7,20 +7,21 @@ const PopupDemo = () => {
         {
             code:
             require('!!raw-loader!./popup.example.1.tsx').default,
-            title: '上弹窗',
-            describe: '这是一段描述',
+            title: '弹出层',
+            describe: '',
             example: <PopupExample1/>
         },
     ]
 
     const apiDocList: apiDoc[] = [
-        {name: 'theme', explain: '按钮类型', type: 'default | primary | text', default: 'default'},
-        {name: 'size', explain: '按钮尺寸', type: 'normal | large | small', default: 'normal'},
-        {name: 'disabled', explain: '是否禁用', type: 'Boolean', default: 'false'},
+        {name: 'title', explain: '弹出层标题', type: 'String', default: '-'},
+        {name: 'content', explain: '弹出层内容', type: 'String', default: '-'},
+        {name: 'trigger', explain: '触发方式', type: 'click | hover', default: 'click'},
+        {name: 'placement', explain: '弹出位置', type: 'top | bottom | right | left', default: 'top'},
     ]
 
     return (
-        <ShowCode codeList={codeList} apiDocList={apiDocList} title='Popup' desc='一个普通popup组件'/>
+        <ShowCode codeList={codeList} apiDocList={apiDocList} title='Popup 弹出层' desc='一个普通popup组件'/>
     );
 };
 

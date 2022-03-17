@@ -3,7 +3,7 @@ import ReactDOM from "react-dom";
 import './Popup.scss'
 
 type Props = {
-    title: string,
+    title?: string,
     content: string,
     trigger?: 'click' | 'hover',
     placement: 'top' | 'bottom' | 'right' | 'left'
@@ -21,74 +21,79 @@ export const Popup: React.FC<Props> = props => {
     const contentWrapper = useRef<HTMLDivElement>(null)
     const [visible, setVisible] = useState(false)
     const {title, content, placement, trigger} = props
-    const boundingClientRect = useMemo(() =>
-        div.current && div.current.getBoundingClientRect()
-        , [div.current, window.scrollY])
+    const [top, setTop] = useState(0)
+    const [left, setLeft] = useState(0)
+    const [width, setWidth] = useState(0)
+    const [height, setHeight] = useState(0)
 
-    const left = useMemo(() => {
-        return boundingClientRect && boundingClientRect.left || 0
-    }, [div.current, window.scrollY, window.scrollX])
-    const top = useMemo(() => {
-        return boundingClientRect && boundingClientRect.top || 0
-    }, [div.current, window.scrollY, window.scrollX])
-    const width = useMemo(() => {
-        return boundingClientRect && boundingClientRect.width || 0
-    }, [div.current])
-    const height = useMemo(() => {
-        return boundingClientRect && boundingClientRect.height || 0
-    }, [div.current])
+    const GetBoundingClientRect = () => {
+        const {width, height, top, left} = div.current && div.current.getBoundingClientRect() || {
+            width: 0,
+            height: 0,
+            top: 0,
+            left: 0
+        }
+        setTop(top)
+        setLeft(left)
+        setWidth(width)
+        setHeight(height)
+
+    }
 
     const style = useMemo<object>(() => {
 
         const table: Table = {
             top: {
-                top: `${top + window.scrollY - 10}px`,
-                left: `${left + window.scrollX + width / 2}px`,
+                top: `${top - 10}px`,
+                left: `${left + width / 2}px`,
                 transform: `translate(-50%,-100%)`
             },
             left: {
-                top: `${top + window.scrollY + height / 2}px`,
-                left: `${left + window.scrollX - 10}px`,
+                top: `${top + height / 2}px`,
+                left: `${left - 10}px`,
                 transform: `translate(-100%,-50%)`
             },
             right: {
-                top: `${top + window.scrollY + height / 2}px`,
-                left: `${left + window.scrollX + width + 10}px`,
+                top: `${top + height / 2}px`,
+                left: `${left + width + 10}px`,
                 transform: `translate(0,-50%)`
             },
             bottom: {
-                top: `${top + window.scrollY + height + 10}px`,
-                left: `${left + window.scrollX + width / 2}px`,
+                top: `${top + height + 10}px`,
+                left: `${left + width / 2}px`,
                 transform: `translate(-50%,0)`
             },
         }
         return table[placement]
-    }, [placement, div.current, window.scrollY, window.scrollX])
+    }, [top, left, width, height])
 
-    const open: EventListener = useCallback(
-        () => {
-            setVisible(true)
-        }, [window.scrollY]
-    )
+    const open: EventListener = () => setVisible(true)
+
+    useEffect(() => {
+        GetBoundingClientRect()
+        window.addEventListener('scroll', e => {
+            GetBoundingClientRect()
+        }, true)
+    }, [])
+
 
     const close: EventListener = useCallback(
         () => {
             setVisible(false)
             document.removeEventListener('click', onClickDocument)
-        }, [window.scrollY]
+        }, []
     )
 
     const onClick = () => {
         setVisible(true)
-
         setTimeout(() => {
             document.addEventListener('click', onClickDocument)
         }, 1)
     }
 
-    const onClickDocument: EventListener | EventListenerObject = (e: any) => {
-        if (contentWrapper.current && contentWrapper.current.contains(e.target)) return
-        if (div.current && div.current.contains(e.target)) return
+    const onClickDocument: EventListener | EventListenerObject = (e) => {
+        if (contentWrapper.current && e.target instanceof Node && contentWrapper.current.contains(e.target)) return
+        if (div.current && e.target instanceof Node && div.current.contains(e.target)) return
         close(e)
     }
 
@@ -104,13 +109,9 @@ export const Popup: React.FC<Props> = props => {
         }
     }, [div])
     const node = visible ? <>
-            {/*
-            <div className="orz-popup-mask" onClick={() => setVisible(false)}/>
-*/}
             <div ref={contentWrapper} className={`orz-popup orz-popup-${placement}`} style={style}>
-                <span className="orz-popup-close">
-                    {title && title}
-                </span>
+                {title && <span className="orz-popup-close">
+                    {title} </span>}
                 <div className="orz-popup-content">
                     {content}
                 </div>
@@ -121,7 +122,6 @@ export const Popup: React.FC<Props> = props => {
 
     return <div>
         <div ref={div} className='orz-popup-wrapper'> {props.children} </div>
-
         {ReactDOM.createPortal(node, document.body)}
     </div>
 }

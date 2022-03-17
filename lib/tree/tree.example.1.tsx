@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import Tree from './tree';
 
-const TreeExample: React.FC = (props) => {
+const TreeExample: React.FC = () => {
     const [array] = useState([{
         text: '1',
         value: '1',

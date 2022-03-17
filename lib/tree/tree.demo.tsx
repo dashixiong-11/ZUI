@@ -13,9 +13,10 @@ const TreeDemo = () => {
         }
     ]
     const apiDocList: apiDoc[] = [
-        {name: 'theme', explain: '按钮类型', type: 'default | primary | text', default: 'default'},
-        {name: 'size', explain: '按钮尺寸', type: 'normal | large | small', default: 'normal'},
-        {name: 'disabled', explain: '是否禁用', type: 'Boolean', default: 'false'},
+        {name: 'sourceData', explain: '原数据', type: 'Array', default: '-'},
+        {name: 'selected', explain: '已选中的数据', type: 'Array', default: '-'},
+        {name: 'onChange', explain: '点击选中回调', type: 'Function', default: '-'},
+        {name: 'multiple', explain: '是否支持多选', type: 'Boolean', default: '-'},
     ]
     return (
         <ShowCode codeList={codeList} apiDocList={apiDocList} title='Button 按钮' desc='一个普普通通的按钮'/>

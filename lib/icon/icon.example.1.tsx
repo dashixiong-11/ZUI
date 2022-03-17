@@ -2,12 +2,10 @@ import Icon from './icon';
 import React from 'react';
 
 
-const IconExample1: React.FunctionComponent = () => {
-  return (
-    <div>
-      <Icon name="wechat"/>
-    </div>
-  );
+const IconExample: React.FunctionComponent = () => {
+    return (
+            <Icon name='wechat'/>
+    );
 };
 
-export default IconExample1;
+export {IconExample};

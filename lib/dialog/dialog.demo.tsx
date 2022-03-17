@@ -21,9 +21,14 @@ const DialogDemo = () => {
         },
     ]
     const apiDocList: apiDoc[] = [
-        {name: 'theme', explain: '按钮类型', type: 'default | primary | text', default: 'default'},
-        {name: 'size', explain: '按钮尺寸', type: 'normal | large | small', default: 'normal'},
-        {name: 'disabled', explain: '是否禁用', type: 'Boolean', default: 'false'},
+        {name: 'visible', explain: '是否显示弹窗', type: 'Boolean', default: 'false'},
+        {name: 'buttons', explain: '自带 确定 取消按钮', type: 'ReactElement[] | null | undefined', default: '-'},
+        {name: 'title', explain: '弹窗标题', type: 'ReactNode', default: '-'},
+        {name: 'onClose', explain: '关闭弹窗回调', type: 'React.MouseEventHandler', default: '-'},
+        {name: 'closeOnClickMask', explain: '是否可以通过点击遮罩层关闭', type: 'Boolean', default: 'false'},
+        {name: 'closeButton', explain: '是否显示关闭按钮', type: 'Boolean', default: 'false'},
+        {name: 'onOk', explain: '确定回调', type: 'Function', default: '-'},
+        {name: 'onCancel', explain: '取消回调', type: 'Function', default: '-'},
     ]
     return (
         <ShowCode codeList={codeList} apiDocList={apiDocList} title='Dialog 弹窗' desc='一个普普通通的按钮'/>
