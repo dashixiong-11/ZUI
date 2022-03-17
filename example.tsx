@@ -8,9 +8,10 @@ import ButtonDemo from './lib/Button/button.demo'
 import ScrollDemo from './lib/scroll/scroll.demo';
 import PopupDemo from './lib/popup/popup.demo';
 import TreeDemo from "./lib/tree/tree.demo";
+import FormDemo from "./lib/form/form.example";
+import Icon from "./lib/icon/icon";
 import './example.scss'
 import './lib/index'
-import FormDemo from "./lib/form/form.example";
 
 
 ReactDOM.render((
@@ -18,8 +19,12 @@ ReactDOM.render((
         <div className="site-page">
             <div className="site-header">
                 <div className="logo">
-                    <span>LOGO</span>
-                    <span> ZUI </span>
+                    <Icon name='zui' size={40}/>
+                    <a href="/">ZUI</a>
+                </div>
+                <div className="github">
+                    <Icon name='github'  size={35}/>
+                    <a href="https://github.com/dashixiong-11/ZUI">Github</a>
                 </div>
             </div>
             <div style={{height: '80px'}}/>
