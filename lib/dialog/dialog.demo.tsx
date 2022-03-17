@@ -31,7 +31,7 @@ const DialogDemo = () => {
         {name: 'onCancel', explain: '取消回调', type: 'Function', default: '-'},
     ]
     return (
-        <ShowCode codeList={codeList} apiDocList={apiDocList} title='Dialog 弹窗' desc='一个普普通通的按钮'/>
+        <ShowCode codeList={codeList} apiDocList={apiDocList} title='Dialog 弹窗' desc='一个普普通通的弹窗'/>
     );
 };
 

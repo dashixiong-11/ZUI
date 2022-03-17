@@ -28,7 +28,7 @@ ReactDOM.render((
                     <span>组件</span>
                     <ul>
                         <li>
-                            <NavLink to="/button">Button</NavLink>
+                            <NavLink activeClassName='active' to="/button">Button</NavLink>
                         </li>
                         <li>
                             <NavLink to="/icon">Icon</NavLink>

@@ -19,7 +19,7 @@ const TreeDemo = () => {
         {name: 'multiple', explain: '是否支持多选', type: 'Boolean', default: '-'},
     ]
     return (
-        <ShowCode codeList={codeList} apiDocList={apiDocList} title='Button 按钮' desc='一个普普通通的按钮'/>
+        <ShowCode codeList={codeList} apiDocList={apiDocList} title='Tree 树选择' desc='一个普普通通的树选择组件'/>
     );
 };
 
