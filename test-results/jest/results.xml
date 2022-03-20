@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="jest tests" tests="20" failures="0" time="5.501">
+  <testsuite name="classes" errors="0" failures="0" skipped="0" timestamp="2022-03-20T11:18:44" time="1.721" tests="4">
+    <testcase classname="classes 接受 1个 参数" name="classes 接受 1个 参数" time="0.004">
+    </testcase>
+    <testcase classname="classes 接受 2个 参数" name="classes 接受 2个 参数" time="0">
+    </testcase>
+    <testcase classname="classes 接受 奇奇怪怪的 参数" name="classes 接受 奇奇怪怪的 参数" time="0">
+    </testcase>
+    <testcase classname="scopedClassMaker 接手字符串或对象" name="scopedClassMaker 接手字符串或对象" time="0.002">
+    </testcase>
+  </testsuite>
+  <testsuite name="icon" errors="0" failures="0" skipped="0" timestamp="2022-03-20T11:18:44" time="1.88" tests="8">
+    <testcase classname="icon render" name="icon render" time="0.018">
+    </testcase>
+    <testcase classname="icon 接受 name 属性" name="icon 接受 name 属性" time="0.047">
+    </testcase>
+    <testcase classname="icon 不传 name 属性 默认 undefined" name="icon 不传 name 属性 默认 undefined" time="0.005">
+    </testcase>
+    <testcase classname="icon 接受 color 属性" name="icon 接受 color 属性" time="0.003">
+    </testcase>
+    <testcase classname="icon 不传 color 默认 #009688" name="icon 不传 color 默认 #009688" time="0.002">
+    </testcase>
+    <testcase classname="icon 接受 size 属性" name="icon 接受 size 属性" time="0.003">
+    </testcase>
+    <testcase classname="icon size 属性 默认值" name="icon size 属性 默认值" time="0.002">
+    </testcase>
+    <testcase classname="icon onClick" name="icon onClick" time="0.005">
+    </testcase>
+  </testsuite>
+  <testsuite name="button" errors="0" failures="0" skipped="0" timestamp="2022-03-20T11:18:44" time="1.839" tests="7">
+    <testcase classname="button render" name="button render" time="0.024">
+    </testcase>
+    <testcase classname="button 接受 theme 属性" name="button 接受 theme 属性" time="0.016">
+    </testcase>
+    <testcase classname="button theme 属性 默认值 default size 属性 默认值 normal" name="button theme 属性 默认值 default size 属性 默认值 normal" time="0.001">
+    </testcase>
+    <testcase classname="button 接受 size 属性" name="button 接受 size 属性" time="0.001">
+    </testcase>
+    <testcase classname="button 接受 disabled 属性" name="button 接受 disabled 属性" time="0.002">
+    </testcase>
+    <testcase classname="button disabled 属性 默认 false" name="button disabled 属性 默认 false" time="0.001">
+    </testcase>
+    <testcase classname="button onClick" name="button onClick" time="0.044">
+    </testcase>
+  </testsuite>
+  <testsuite name="第一个测试用例" errors="0" failures="0" skipped="0" timestamp="2022-03-20T11:18:46" time="0.311" tests="1">
+    <testcase classname="第一个测试用例 111" name="第一个测试用例 111" time="0.001">
+    </testcase>
+  </testsuite>
+</testsuites>

@@ -12,11 +12,11 @@ interface Props extends ButtonHTMLAttributes<HTMLButtonElement> {
 
 
 const ORZButton: React.FunctionComponent<Props> = (props) => {
-    const {className, disabled,  size, theme, ...rest} = props
-    const classes = [theme, size ].filter(Boolean).join(' ')
+    const {className, disabled, size, theme, ...rest} = props
+    const classes = [theme, size].filter(Boolean).join(' ')
 
     return (
-        <button disabled={disabled} className={sc('', {extra: className + ` ${classes}`})} {...rest}>
+        <button disabled={disabled}  className={sc('', {extra: className || '' + ` ${classes}`})} {...rest}>
             {props.children}
         </button>
     )

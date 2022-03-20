@@ -2,16 +2,16 @@
 
 exports[`icon render 1`] = `
 <svg
-  className="zui-icon"
+  className="orz-icon"
+  color="#009688"
   style={
     Object {
-      "fill": "undefined",
-      "fontSize": "undefinedpx",
+      "fontSize": "15px",
     }
   }
 >
   <use
-    xlinkHref="#undefined"
+    xlinkHref="#wechat"
   />
 </svg>
 `;
