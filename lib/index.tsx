@@ -1,3 +1,11 @@
 export {default as Icon} from './icon/icon'
+export {default as ORZButton} from './Button/Button'
+export {default as Popup} from './popup/Popup'
+export {default as Scroll} from './scroll/scroll'
+export {default as Tree} from './tree/tree'
+export {default as Dialog} from './dialog/dialog'
+export {default as alert} from './dialog/dialog'
+export {default as confirm} from './dialog/dialog'
+export {default as modal} from './dialog/dialog'
 import './index.scss'
 
