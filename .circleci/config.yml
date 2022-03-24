@@ -69,7 +69,7 @@ workflows:
           requires:
             - build
           filters:
-            tag:
+            tags:
               only: /^v[0-9]+(\.[0-9]+)*/
             branches:
               ignore: /.*/
