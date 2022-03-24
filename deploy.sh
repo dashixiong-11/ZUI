@@ -1,3 +1,3 @@
 #!/bin/zsh
 npm version $1 && \
-git push
+git push origin master:deploy --follow-tags
